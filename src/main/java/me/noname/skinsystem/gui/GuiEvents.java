@@ -38,8 +38,8 @@ public class GuiEvents implements Listener {
             }else if(event.getSlot() == 16){
                 if(meta.hasCustomModelData()){
                     meta.setCustomModelData(null);
+                    item.setItemMeta(meta);
                     player.sendMessage("§aPomyślnie usunięto skina!");
-                    player.closeInventory();
             }else{
                 player.sendMessage("§cNie można usunąć skina poniewasz nie masz go w ręce!");
             }

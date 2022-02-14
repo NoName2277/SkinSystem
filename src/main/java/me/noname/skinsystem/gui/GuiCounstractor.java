@@ -21,15 +21,17 @@ public class GuiCounstractor {
         List<String> lore1 = new ArrayList<>();
         lore1.add("§aKliknij aby wyczyść szkin");
         clearMeta.setLore(lore1);
-        clear.setItemMeta(clearMeta);
         clearMeta.setDisplayName("§bWyczyść");
+        clear.setItemMeta(clearMeta);
         ItemStack sword = new ItemStack(Material.NETHERITE_SWORD);
         ItemMeta swordMeta = sword.getItemMeta();
         swordMeta.setDisplayName("§aKatana");
         List<String> lore = new ArrayList<>();
+        lore.add("");
         lore.add("§aKliknij mnie aby ustawić ten skin!");
+        lore.add("");
         lore.add("§cAby ustawić ten skin musisz trzymać");
-        lore.add(" w rence Netherytowy Miecz!");
+        lore.add("§cw rence Netherytowy Miecz!");
 
         swordMeta.setLore(lore);
         swordMeta.setCustomModelData(1);
@@ -40,5 +42,6 @@ public class GuiCounstractor {
         quitMeta.setDisplayName("§bWyjdz");
         quit.setItemMeta(quitMeta);
         gui.setItem(17, quit);
+        gui.setItem(16, clear);
     }
 }
