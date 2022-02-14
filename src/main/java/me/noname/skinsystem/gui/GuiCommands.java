@@ -10,7 +10,7 @@ public class GuiCommands implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
-        if(command.getName().equalsIgnoreCase("skin")){
+        if(command.getName().equalsIgnoreCase("skins")){
             if(sender instanceof Player){
                 player.openInventory(GuiCounstractor.gui);
             }else {

@@ -5,4 +5,4 @@ api-version: 1.18
 authors: [ NoName ]
 description: Add skin system
 commands:
-  skin:
+  skins:
