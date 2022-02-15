@@ -1,5 +1,6 @@
-package me.noname.skinsystem.gui;
+package me.noname.skinsystem.gui.guievents;
 
+import me.noname.skinsystem.gui.GuiCounstractor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,11 +9,11 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class GuiEvents implements Listener {
+public class SkinGuiEvents implements Listener {
 
     @EventHandler
     public void inventoryClick(InventoryClickEvent event){
-        if(!event.getInventory().equals(GuiCounstractor.gui))
+        if(!event.getInventory().equals(GuiCounstractor.Swordgui))
             return;
         if(event.getCurrentItem() == null) return;
         if(event.getCurrentItem().getItemMeta() == null) return;
@@ -33,8 +34,7 @@ public class GuiEvents implements Listener {
             }
         }else if(event.getSlot() == 17){
                 player.closeInventory();
-                player.sendMessage("§aZamknięto Gui" +
-                        "!");
+                player.sendMessage("§aZamknięto Gui!");
             }else if(event.getSlot() == 16){
                 if(meta.hasCustomModelData()){
                     meta.setCustomModelData(null);

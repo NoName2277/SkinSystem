@@ -12,9 +12,9 @@ public class GuiCommands implements CommandExecutor {
         Player player = (Player) sender;
         if(command.getName().equalsIgnoreCase("skins")){
             if(sender instanceof Player){
-                player.openInventory(GuiCounstractor.gui);
+                player.openInventory(GuiCounstractor.Swordgui);
             }else {
-                player.sendMessage("Nie możesz tego zrobić!");
+                sender.sendMessage("§cNie możesz tego zrobić!");
                 return true;
             }
         }

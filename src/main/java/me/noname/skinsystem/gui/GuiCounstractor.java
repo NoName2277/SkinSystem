@@ -1,47 +1,18 @@
 package me.noname.skinsystem.gui;
 
+import me.noname.skinsystem.gui.items.Functions;
+import me.noname.skinsystem.gui.items.Skins;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class GuiCounstractor {
-    public static Inventory gui;
+    public static Inventory Swordgui;
+    public static Inventory MainGui;
 
-
-    public static void createInventory(){
-        gui = Bukkit.createInventory(null, 18, "§b§lSkins");
-
-        ItemStack clear = new ItemStack(Material.PAPER);
-        ItemMeta clearMeta = clear.getItemMeta();
-        List<String> lore1 = new ArrayList<>();
-        lore1.add("§aKliknij aby wyczyść szkin");
-        clearMeta.setLore(lore1);
-        clearMeta.setDisplayName("§bWyczyść");
-        clear.setItemMeta(clearMeta);
-        ItemStack sword = new ItemStack(Material.NETHERITE_SWORD);
-        ItemMeta swordMeta = sword.getItemMeta();
-        swordMeta.setDisplayName("§aKatana");
-        List<String> lore = new ArrayList<>();
-        lore.add("");
-        lore.add("§aKliknij mnie aby ustawić ten skin!");
-        lore.add("");
-        lore.add("§cAby ustawić ten skin musisz trzymać");
-        lore.add("§cw rence Netherytowy Miecz!");
-
-        swordMeta.setLore(lore);
-        swordMeta.setCustomModelData(1);
-        sword.setItemMeta(swordMeta);
-        gui.setItem(4, sword);
-        ItemStack quit = new ItemStack(Material.RED_BANNER);
-        ItemMeta quitMeta = quit.getItemMeta();
-        quitMeta.setDisplayName("§bWyjdz");
-        quit.setItemMeta(quitMeta);
-        gui.setItem(17, quit);
-        gui.setItem(16, clear);
+    public static void createSwordGui(){
+        Swordgui = Bukkit.createInventory(null, 18, "§b§lSwordSkins");
+        Swordgui.setItem(4, Skins.catana);
+        Swordgui.setItem(17, Functions.quit);
+        Swordgui.setItem(16, Functions.clear);
     }
 }
